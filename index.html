@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stefan Stefanowicz</title>
+    <style>
+        /* Minimalizm w układzie, szaleństwo w kolorach */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Szalony, animowany gradient */
+            background: linear-gradient(45deg, #ff007f, #00ffcc, #ccff00);
+            background-size: 400% 400%;
+            animation: colors 8s ease infinite;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #111;
+            text-align: center;
+        }
+
+        /* Animacja tła */
+        @keyframes colors {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+        }
+
+        .emoji {
+            font-size: 6rem;
+            margin: 2rem 0;
+        }
+
+        .quote {
+            font-size: 1.2rem;
+            max-width: 500px;
+            padding: 20px;
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>stefan stefanowicz</h1>
+    
+    <div class="emoji">🦩</div>
+    
+    <div class="quote">
+        "Nigdy nie ufaj ludziom, którzy twierdzą, że nie lubią pierogów. Oni coś ukrywają."
+    </div>
+
+</body>
+</html>
