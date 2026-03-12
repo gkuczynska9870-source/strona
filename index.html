@@ -3,64 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stefan Stefanowicz</title>
+    <title>Gabrysia - Portfolio Architektoniczne</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        /* Minimalizm w układzie, szaleństwo w kolorach */
+        /* Główne zmienne kolorystyczne - jasna, delikatna paleta */
+        :root {
+            --bg-color: #fdfcfb; /* Złamana, ciepła biel */
+            --text-color: #333333; /* Ciemny, miękki grafit zamiast ostrej czerni */
+            --accent-color: #b5a397; /* Delikatny, piaskowy beż */
+        }
+
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            /* Szalony, animowany gradient */
-            background: linear-gradient(45deg, #ff007f, #00ffcc, #ccff00);
-            background-size: 400% 400%;
-            animation: colors 8s ease infinite;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: #111;
-            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
-        /* Animacja tła */
-        @keyframes colors {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Subtelna siatka kreślarska w tle */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Górny pasek nawigacyjny */
+        header {
+            padding: 2.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+            font-weight: normal;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 2.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Główna sekcja z tytułem i zdjęciem */
+        .hero {
+            text-align: center;
+            padding: 3rem 5% 5rem;
         }
 
         h1 {
-            font-size: 3rem;
-            margin: 0;
-            letter-spacing: 2px;
-            text-transform: lowercase;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
         }
 
-        .emoji {
-            font-size: 6rem;
-            margin: 2rem 0;
+        .project-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
-        .quote {
+        .project-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Subtelny efekt przejścia dla zdjęcia */
+            transition: transform 0.5s ease; 
+        }
+
+        .project-container:hover img {
+            transform: scale(1.01);
+        }
+
+        .project-details {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 1rem;
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
-            max-width: 500px;
-            padding: 20px;
+            color: var(--text-color);
             font-style: italic;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+        }
+
+        /* Stopka */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #999;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            background-color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <h1>stefan stefanowicz</h1>
-    
-    <div class="emoji">🦩</div>
-    
-    <div class="quote">
-        "Nigdy nie ufaj ludziom, którzy twierdzą, że nie lubią pierogów. Oni coś ukrywają."
-    </div>
+    <header>
+        <div class="logo">GABRYSIA <span>Architektura</span></div>
+        <nav>
+            <a href="#">O mnie</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Gabrysia portfolio</h1>
+            
+            <div class="project-container">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Wizualizacja nowoczesnego domu z drewna i szkła">
+                
+                <div class="project-details">
+                    <span class="project-title">Projekt: Dom Słoneczny</span>
+                    <span>Wizualizacja zewnętrzna | 2026</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Gabrysia. Portfolio Architektoniczne.
+    </footer>
 
 </body>
 </html>
